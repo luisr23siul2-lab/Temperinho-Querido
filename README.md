@@ -1,1 +1,0 @@
-# Temperinho-Querido
