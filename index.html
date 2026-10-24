@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8f1e7">
+<title>Cantinho do Apoio — Carta digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Patrick+Hand&family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Handlee&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header class="intro" id="instructions"><div class="brand-mark">♡</div><p class="eyebrow">UM PEQUENO GESTO PODE ACOLHER</p><h1>Cantinho do Apoio</h1><p>Escreva sua mensagem nas linhas do caderno. Escolha uma letra e um adesivo para deixar sua carta com a sua cara. No final, gere a imagem e envie para nós.</p></header>
+<section class="controls" id="controls">
+<label for="fontChoice">Escolha a fonte</label>
+<select id="fontChoice">
+<option value="hand">Letra do Cantinho (padrão)</option><option value="nunito">Simples e limpa</option><option value="caveat">Cursiva delicada</option><option value="kalam">Manuscrita arredondada</option><option value="indie">Espontânea</option><option value="handlee">Leve e amigável</option><option value="shadows">Fina e descontraída</option>
+</select>
+<label>Adesivo da carta <span>(escolha apenas um)</span></label>
+<div class="sticker-row"><button id="stickerButton" class="pink-button" type="button">＋ Adicionar adesivo</button><button id="removeSticker" class="plain-button" type="button" hidden>Remover</button></div>
+<div id="stickerPicker" class="sticker-picker" hidden aria-label="Escolha um adesivo">
+<button type="button" data-sticker="❤️" aria-label="Coração vermelho">❤️</button><button type="button" data-sticker="🩷" aria-label="Coração rosa">🩷</button><button type="button" data-sticker="💖" aria-label="Coração brilhante">💖</button><button type="button" data-sticker="💕" aria-label="Dois corações">💕</button><button type="button" data-sticker="😊" aria-label="Carinha feliz">😊</button><button type="button" data-sticker="🥰" aria-label="Carinha apaixonada">🥰</button><button type="button" data-sticker="😂" aria-label="Carinha rindo">😂</button><button type="button" data-sticker="✨" aria-label="Brilhos">✨</button><button type="button" data-sticker="🌷" aria-label="Tulipa">🌷</button><button type="button" data-sticker="🌻" aria-label="Girassol">🌻</button><button type="button" data-sticker="🦋" aria-label="Borboleta">🦋</button><button type="button" data-sticker="🌈" aria-label="Arco-íris">🌈</button><button type="button" data-sticker="⭐" aria-label="Estrela">⭐</button><button type="button" data-sticker="💌" aria-label="Carta de amor">💌</button><button type="button" data-sticker="🫶" aria-label="Mãos em coração">🫶</button>
+</div>
+<label for="authorName">Assine como quiser <span>(opcional)</span></label><input id="authorName" maxlength="45" placeholder="Seu nome ou apelido">
+</section>
+<section class="paper-wrap"><article class="paper" id="letterPaper"><div class="paper-top"><span>Uma carta feita com carinho</span><span>♡</span></div><div class="sticker-on-paper" id="stickerPreview" hidden title="Toque para trocar o adesivo"></div><textarea id="letterText" maxlength="1800" aria-label="Escreva sua mensagem" placeholder="Querido Cantinho do Apoio,&#10;&#10;Escreva aqui sua mensagem..."></textarea><div class="signature"><span>Com carinho,</span><div id="signaturePreview">Alguém do Cantinho</div></div><div class="paper-bottom">Cada palavra importa ♡</div></article></section>
+<section class="actions" id="screenActions"><p id="status" role="status">Sua carta fica neste aparelho enquanto você escreve.</p><button class="pink-button big" id="makeImage" type="button">♡ Gerar imagem da carta</button><button class="plain-button" id="resetLetter" type="button">Começar outra carta</button></section>
+<footer>Uma mensagem feita com carinho.</footer>
+</main>
+<div class="preview-modal" id="previewModal" aria-hidden="true"><div class="preview-panel" role="dialog" aria-modal="true" aria-labelledby="previewTitle"><button class="close-preview" id="closePreview" aria-label="Fechar prévia">×</button><h2 id="previewTitle">Sua carta está pronta</h2><p>Salve a imagem ou compartilhe pelo aplicativo que preferir.</p><img id="generatedImage" alt="Imagem da carta digital"><div class="preview-actions"><a id="downloadLink" class="pink-button download-link" download="carta-cantinho-do-apoio.png">Salvar imagem</a><button class="plain-button" id="nativeShare" type="button">Compartilhar</button></div></div></div>
+<script src="script.js"></script>
+</body></html>
